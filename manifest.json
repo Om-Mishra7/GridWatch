@@ -1,0 +1,22 @@
+{
+  "manifest_version": 3,
+  "name": "GridWatch",
+  "version": "1.1.0",
+  "description": "CCTV-style wall: add URLs and watch them all at once in a grid of equal square tiles.",
+  "permissions": ["storage", "declarativeNetRequest", "tabs"],
+  "host_permissions": ["<all_urls>"],
+  "background": { "service_worker": "background.js" },
+  "icons": { "16": "icons/icon16.png", "48": "icons/icon48.png", "128": "icons/icon128.png" },
+  "action": {
+    "default_title": "Open GridWatch",
+    "default_icon": { "16": "icons/icon16.png", "48": "icons/icon48.png", "128": "icons/icon128.png" }
+  },
+  "content_scripts": [
+    {
+      "matches": ["https://www.youtube.com/*"],
+      "all_frames": true,
+      "run_at": "document_start",
+      "js": ["yt-tile.js"]
+    }
+  ]
+}

@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>GridWatch</title>
+  <link rel="icon" href="icons/icon48.png">
+  <link rel="stylesheet" href="dashboard.css">
+</head>
+<body>
+  <header id="bar">
+    <img src="icons/icon48.png" width="26" height="26" alt="">
+    <strong class="brand">GridWatch</strong>
+    <form id="addForm">
+      <input id="urlInput" type="text" placeholder="Paste URL(s) — separate several with spaces or new lines" autocomplete="off">
+      <button type="submit">Add</button>
+    </form>
+    <label>Grid
+      <select id="gridSize">
+        <option value="auto" selected>Auto-fit</option>
+        <option value="2">2 × 2</option>
+        <option value="3">3 × 3</option>
+        <option value="4">4 × 4</option>
+        <option value="5">5 × 5</option>
+        <option value="6">6 × 6</option>
+        <option value="8">8 × 8</option>
+      </select>
+    </label>
+    <label>Collection
+      <select id="collSel"><option value="">— none —</option></select>
+    </label>
+    <button id="saveCollBtn" type="button" class="ghost" title="Save the current URLs as a collection">Save</button>
+    <button id="delCollBtn" type="button" class="ghost" title="Delete the selected collection">Delete</button>
+    <button id="clearBtn" type="button" class="ghost">Clear all</button>
+    <span id="count"></span>
+  </header>
+  <main id="grid"></main>
+  <script src="dashboard.js"></script>
+</body>
+</html>
